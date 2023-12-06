@@ -35,7 +35,7 @@ const MoneyDetails = props => {
       <div className="expenses-container">
         <img
           src="https://assets.ccbp.in/frontend/react-js/money-manager/expenses-image.png"
-          alt="expanses"
+          alt="expenses"
           className="details-img"
         />
         <div>

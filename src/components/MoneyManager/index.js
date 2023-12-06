@@ -83,6 +83,7 @@ class MoneyManager extends Component {
 
     return expansesAmount
   }
+
   getIncome = () => {
     const {transactionsList} = this.state
     let incomeAmount = 0
@@ -121,7 +122,7 @@ class MoneyManager extends Component {
     const expensesAmount = this.getExpenses()
 
     return (
-      <div className="app=container">
+      <div className="app-container">
         <div className="responsive-container">
           <div className="header-container">
             <h1 className="heading">Hi, Richard</h1>
@@ -144,7 +145,8 @@ class MoneyManager extends Component {
               <input
                 type="text"
                 id="title"
-                value={this.onChangeTitleInput}
+                value={titleInput}
+                onChange={this.onChangeTitleInput}
                 className="input"
                 placeholder="TITLE"
               />
@@ -168,16 +170,11 @@ class MoneyManager extends Component {
                 value={optionId}
                 onChange={this.onChangeOptionId}
               >
-                {transactionTypeOptions.map(
-                  (eachTransaction = (
-                    <option
-                      key={eachOption.optionId}
-                      value={eachOption.optionId}
-                    >
-                      {eachOption.displayText}
-                    </option>
-                  )),
-                )}
+                {transactionTypeOptions.map(eachOption => (
+                  <option key={eachOption.optionId} value={eachOption.optionId}>
+                    {eachOption.displayText}
+                  </option>
+                ))}
               </select>
               <button type="submit" className="button">
                 Add
